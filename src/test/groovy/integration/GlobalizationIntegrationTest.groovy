@@ -1,10 +1,7 @@
 package integration
 
-import main.Globalization
+import main.groovy.Globalization
 
-/**
- * Created by mhatch on 12/5/14.
- */
 import org.junit.Test;
 import org.junit.Before;
 
@@ -13,7 +10,7 @@ class GlobalizationIntegrationTest {
 
     @Before
     void setUp() {
-        globalization = new Globalization(localeDirectory: "src/tests/fixtures/locales")
+        globalization = new Globalization(localeDirectory: "src/test/resources/fixtures/locales")
     }
 
     @Test

@@ -1,4 +1,6 @@
-package main
+package main.groovy
+
+import main.groovy.Globalization
 
 /**
  * Created by mhatch on 12/5/14.
@@ -6,7 +8,7 @@ package main
 class Translation {
     def globalization;
 
-    def Translation(Globalization g = new Globalization()) {
+    def Translation(Globalization g=new Globalization()) {
         globalization = g;
     }
 
