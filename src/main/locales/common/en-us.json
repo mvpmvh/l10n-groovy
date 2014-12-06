@@ -1,0 +1,52 @@
+{
+    "common": {
+        "terms": {
+            "applyNow": "Apply Now",
+            "close": "Close",
+            "edit": "Edit",
+            "okay": "Okay",
+            "other": "Other",
+            "grade": "Grade",
+            "gradeLevel": "Grade Level",
+            "educator": "educator || educators",
+            "learnMore": "Learn More",
+            "search": "Search"
+        },
+        "forms": {
+            "labels": {
+                "city": "City",
+                "firstName": "First name",
+                "email": "Email",
+                "emailConfirm": "Confirm email",
+                "lastName": "Last name",
+                "password": "Password",
+                "passwordConfirm": "Confirm password",
+                "state": "State/province",
+                "title": "Title",
+                "username": "Username",
+                "zip": "Zip/postal code"
+            },
+            "required": {
+                "all": "* All fields are required."
+            },
+            "validation": {
+                "required": "This field can't be blank",
+                "agreement": "You must agree to terms to continue",
+                "confirmation": "must match confirmation",
+                "length": "must be less than 1000 characters.",
+                "validName": "Please enter a valid"
+            }
+        },
+        "modals": {
+            "updateBrowser": {
+                "content": "To get the best possible experience we recommend that you %{link_open}upgrade%{link_close} to a newer version of Internet Explorer or use a different web browser.",
+                "heading": "Did you know that your Internet Explorer is out of date?",
+                "optOut": "Please don't show me this message again",
+                "later": "Upgrade Later"
+            }
+        },
+        "news": {
+            "title": "Global News"
+        }
+    }
+}
