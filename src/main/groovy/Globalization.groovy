@@ -1,13 +1,15 @@
-package main
+package main.groovy
 
 import groovy.json.JsonSlurper
 
-/**
- * Created by mhatch on 12/5/14.
- */
+
 class Globalization {
-    String localeDirectory = "/locales";
-    String defaultLocale = "en-us";
+    def localeDirectory, defaultLocale;
+
+    def Globalization(String localeDirectory="/resources/locales", String defaultLocale="en-us") {
+        this.localeDirectory = localeDirectory;
+        this.defaultLocale = defaultLocale;
+    }
 
     /*
     * finds a dictionary and will append the default locale dictionary if non-default locale dictionary requested.

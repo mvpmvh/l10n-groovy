@@ -1,10 +1,8 @@
 package unit
 
-import main.Globalization
+import main.groovy.Globalization
 
-/**
- * Created by mhatch on 12/5/14.
- */
+
 import org.junit.Test;
 import org.junit.Before;
 
