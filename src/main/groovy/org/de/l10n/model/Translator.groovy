@@ -19,14 +19,14 @@ class Translator {
         return translation;
     }
 
-    def private Map findDictionary(String name, String locale, String version) {
+    def private Map<String, ?> findDictionary(String name, String locale, String version) {
 
         def dictionary = globalization.findDictionary(name, locale, version);
 
         return dictionary;
     }
 
-    def private Map parseTerm(String term) {
+    def private Map<String, ?> parseTerm(String term) {
 
         def tokens = term.tokenize(".");
         def dictionaryName = tokens[0];
@@ -36,7 +36,7 @@ class Translator {
         return criteria;
     }
 
-    def private findTerm(Map dictionary, List<String> paths) {
+    def private findTerm(Map<String, ?> dictionary, List<String> paths) {
 
         def dictionaryValue = dictionary;
 

@@ -16,7 +16,7 @@ class Globalizer {
     /*
     * finds a dictionary and will append the default locale dictionary if non-default locale dictionary requested.
      */
-    def Map findDictionary(String name, String locale, String version) {
+    def Map<String, ?> findDictionary(String name, String locale, String version) {
 
         def dictionary = createDictionary(name, locale);
 
@@ -32,7 +32,7 @@ class Globalizer {
     * looks for json dictionary file based upon name and locale.
     * if json dictionary file does not exist, return empty map;
      */
-    def Map createDictionary(String name, String locale) {
+    def Map<String, ?> createDictionary(String name, String locale) {
 
         def dictionary = [:];
         def final InputStream inputStream = getClass().getResourceAsStream("${localeDirectory}/${name}/${locale}.json");
@@ -47,7 +47,7 @@ class Globalizer {
     /*
     * merges the contents of dictionary2 into dictionary1 if not already present in dictionary1
      */
-    def private void appendDictionary(Map dictionary1, Map dictionary2) {
+    def private void appendDictionary(Map<String, ?> dictionary1, Map<String, ?> dictionary2) {
 
         dictionary2.each { key, value ->
             if(dictionary1.containsKey(key) == false) {
