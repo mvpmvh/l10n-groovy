@@ -1,14 +1,10 @@
-package main.groovy
+package org.de.l10n
 
-import main.groovy.Globalization
 
-/**
- * Created by mhatch on 12/5/14.
- */
-class Translation {
-    def globalization;
+class Translator {
+    def Globalizer globalization;
 
-    def Translation(Globalization g=new Globalization()) {
+    def Translator(Globalizer g=new Globalizer()) {
         globalization = g;
     }
 

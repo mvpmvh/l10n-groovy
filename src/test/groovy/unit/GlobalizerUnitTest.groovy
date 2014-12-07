@@ -1,17 +1,15 @@
 package unit
 
-import main.groovy.Globalization
-
-
+import org.de.l10n.Globalizer
 import org.junit.Test;
 import org.junit.Before;
 
-class GlobalizationUnitTest {
+class GlobalizerUnitTest {
     def globalization;
 
     @Before
     void setUp() {
-        globalization = new Globalization()
+        globalization = new Globalizer()
     }
 
     @Test

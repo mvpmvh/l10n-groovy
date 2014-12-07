@@ -1,20 +1,16 @@
 package integration
 
-
-import main.groovy.Globalization;
-import main.groovy.Translation;
-
-
+import org.de.l10n.Globalizer
+import org.de.l10n.Translator;
 import org.junit.Test;
 import org.junit.Before;
 
-class TranslationIntegrationTest {
-    def translation, globalization;
+class TranslatorIntegrationTest {
+    def translation
 
     @Before
     void setUp() {
-        globalization = new Globalization(localeDirectory: "src/test/resources/fixtures/locales");
-        translation = new Translation(globalization);
+        translation = new Translator(new Globalizer());
 
     }
 

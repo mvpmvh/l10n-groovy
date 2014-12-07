@@ -1,12 +1,14 @@
-package main.groovy
+package org.de.l10n
 
 import groovy.json.JsonSlurper
 
 
-class Globalization {
-    def localeDirectory, defaultLocale;
+class Globalizer {
+    def String localeDirectory;
+    def String defaultLocale;
+    def JsonSlurper slurper = new JsonSlurper();
 
-    def Globalization(String localeDirectory="/resources/locales", String defaultLocale="en-us") {
+    def Globalizer(String localeDirectory="locales", String defaultLocale="en-us") {
         this.localeDirectory = localeDirectory;
         this.defaultLocale = defaultLocale;
     }
@@ -33,11 +35,10 @@ class Globalization {
     def Map createDictionary(String name, String locale) {
 
         def dictionary = [:];
-        def dictionaryFile = new File("${localeDirectory}/${name}/${locale}.json");
+        def final InputStream inputStream = getClass().getResourceAsStream("${localeDirectory}/${name}/${locale}.json");
 
-        if(dictionaryFile.exists()) {
-            def slurper = new JsonSlurper();
-            dictionary = slurper.parse(dictionaryFile);
+        if(inputStream != null) {
+            dictionary = slurper.parse(inputStream);
         }
 
         return dictionary;
