@@ -1,4 +1,6 @@
-package org.de.l10n
+package org.de.l10n.model
+
+import org.de.l10n.model.Globalizer
 
 
 class Translator {
@@ -34,11 +36,11 @@ class Translator {
         return criteria;
     }
 
-    def private findTerm(dictionary, paths) {
+    def private findTerm(Map dictionary, List<String> paths) {
 
         def dictionaryValue = dictionary;
 
-        for(term in paths) {
+        for(String term in paths) {
             if(dictionaryValue instanceof java.util.Map && dictionaryValue.containsKey(term)) {
                 dictionaryValue = dictionaryValue[term];
             }

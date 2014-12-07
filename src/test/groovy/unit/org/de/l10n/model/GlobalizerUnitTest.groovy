@@ -1,6 +1,6 @@
-package unit
+package unit.org.de.l10n.model
 
-import org.de.l10n.Globalizer
+import org.de.l10n.model.Globalizer
 import org.junit.Test;
 import org.junit.Before;
 

@@ -1,4 +1,4 @@
-package org.de.l10n
+package org.de.l10n.model
 
 import groovy.json.JsonSlurper
 

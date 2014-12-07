@@ -1,7 +1,7 @@
-package integration
+package integration.org.de.l10n.model
 
-import org.de.l10n.Globalizer
-import org.de.l10n.Translator;
+import org.de.l10n.model.Globalizer
+import org.de.l10n.model.Translator;
 import org.junit.Test;
 import org.junit.Before;
 
