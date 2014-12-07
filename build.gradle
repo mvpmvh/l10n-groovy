@@ -2,6 +2,9 @@ apply plugin: 'groovy'
 
 version = '1.0'
 
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
 repositories {
     mavenCentral()
 }
@@ -13,4 +16,5 @@ dependencies {
 
 jar {
     manifest.attributes provider: 'gradle'
+    from { configurations.runtime.collect { zipTree(it) } }
 }

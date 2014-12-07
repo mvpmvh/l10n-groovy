@@ -1,20 +1,20 @@
 package integration
 
-import main.groovy.Globalization
+import org.de.l10n.Globalizer
 
 import org.junit.Test;
 import org.junit.Before;
 
-class GlobalizationIntegrationTest {
+class GlobalizerIntegrationTest {
     def globalization;
 
     @Before
     void setUp() {
-        globalization = new Globalization(localeDirectory: "src/test/resources/fixtures/locales")
+        globalization = new Globalizer()
     }
 
     @Test
-    void "createDictionary should return empty dictionary when file not found"() {
+    void "createDictionary should return empty dictionary when dictionary file not found"() {
 
         def dictionary = globalization.createDictionary("fakeName", "fakeLocale");
 
