@@ -1,6 +1,7 @@
 package unit.org.de.l10n.model.dictionary.token
 
 import org.de.l10n.model.dictionary.token.ExpressionToken
+import org.de.l10n.model.dictionary.token.PluralToken
 import org.de.l10n.model.dictionary.token.TextToken
 import org.junit.Test;
 
@@ -23,5 +24,41 @@ class TokenUnitTest {
         def expression = ["color": "blue"]
 
         assert token.translate(expression) == "blue"
+    }
+
+    @Test
+    void "PluralToken should handle single-qoute string with plural" () {
+
+        def token = new PluralToken('name || names')
+        def expression = ["n": 1]
+
+        assert token.translate(expression) == "name"
+    }
+
+    @Test
+    void "PluralToken should handle double-qoute string with plural"() {
+
+        def token = new PluralToken("name || names")
+        def expression = ["n": 1]
+
+        assert token.translate(expression) == "name"
+    }
+
+    @Test
+    void "PluralToken should handle string in nestedPlural form" () {
+
+        def token = new PluralToken("p('name || names', n)")
+        def expression = ["n": 1]
+
+        assert token.translate(expression) == "name"
+    }
+
+    @Test
+    void "PluralToken should return plural form"() {
+
+        def token = new PluralToken("p('name || names', n)")
+        def expression = ["n": 5]
+
+        assert token.translate(expression) == "names"
     }
 }
