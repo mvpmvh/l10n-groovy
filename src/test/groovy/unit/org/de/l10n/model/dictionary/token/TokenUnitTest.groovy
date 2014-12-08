@@ -2,6 +2,7 @@ package unit.org.de.l10n.model.dictionary.token
 
 import org.de.l10n.model.dictionary.token.ExpressionToken
 import org.de.l10n.model.dictionary.token.PluralToken
+import org.de.l10n.model.dictionary.token.ReferenceToken
 import org.de.l10n.model.dictionary.token.TextToken
 import org.junit.Test;
 
@@ -60,5 +61,13 @@ class TokenUnitTest {
         def expression = ["n": 5]
 
         assert token.translate(expression) == "names"
+    }
+
+    @Test
+    void "ReferenceToken should return its path" () {
+
+        def token = new ReferenceToken("t('path.to.term')")
+
+        assert token.getPath() == "path.to.term"
     }
 }
