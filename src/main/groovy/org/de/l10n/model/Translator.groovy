@@ -1,31 +1,27 @@
 package org.de.l10n.model
 
-import org.de.l10n.model.Globalizer
+import org.de.l10n.service.DictionaryService
 
 
 class Translator {
-    def Globalizer globalization;
-
-    def Translator(Globalizer g=new Globalizer()) {
-        globalization = g;
-    }
+    def DictionaryService dictionaryService;
 
     def findTranslation(String term, String locale, String version) {
 
         def criteria = parseTerm(term);
-        def dictionary = findDictionary(criteria["dictionaryName"], locale, version);
+        def dictionary = dictionaryService.findDictionary(criteria["dictionaryName"], locale, version);
         def translation = findTerm(dictionary, criteria["dictionaryPath"])
 
         return translation;
     }
 
-    def private Map<String, ?> findDictionary(String name, String locale, String version) {
-
-        def dictionary = globalization.findDictionary(name, locale, version);
-
-        return dictionary;
-    }
-
+    /*
+    * parses a term to identify the dictionary name and the path of the key to translate
+    * For Example:
+    *   parseTerm("common.terms.applyNow")
+    *
+    *   will return ["dictionaryName": "common", "dictionaryPath": "common.terms.applyNow"]
+     */
     def private Map<String, ?> parseTerm(String term) {
 
         def tokens = term.tokenize(".");

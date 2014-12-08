@@ -1,10 +1,10 @@
 package org.de.l10n.model.dictionary
 
 class Dictionary {
-    def private Map terms;
+    def private Map<String, ?> terms;
     def Map content;
 
-    def Dictionary(Map content=new java.util.HashMap()) {
+    def Dictionary(Map<String, ?> content=new java.util.HashMap<String, ?>()) {
         this.content = content;
         this.terms = buildTerms(content);
     }
