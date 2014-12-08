@@ -123,7 +123,7 @@ class Dictionary {
         }
 
         def private static boolean hasExpressionGrammar(String phrase) {
-            return phrase ==~ /.*%\{.*\).*/
+            return phrase ==~ /.*%\{.*\}.*/
         }
 
         def private static List<BaseToken> parseMultipleTokens(String phrase, TokenRegex tr) {
