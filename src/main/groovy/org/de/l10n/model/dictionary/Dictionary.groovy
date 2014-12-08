@@ -4,6 +4,7 @@ import org.de.l10n.model.dictionary.token.BaseToken
 import org.de.l10n.model.dictionary.token.ExpressionToken
 import org.de.l10n.model.dictionary.token.PluralToken
 import org.de.l10n.model.dictionary.token.ReferenceToken
+import org.de.l10n.model.dictionary.token.TextToken
 
 class Dictionary {
     def private Map<String, ?> terms;
@@ -72,51 +73,68 @@ class Dictionary {
             }
         }
 
-        def static List<BaseToken> tokenize(String content) {
+        def static List<BaseToken> tokenize(String phrase) {
 
             def tokens = []
 
-            if(isReferenceGrammar(content)) {
-                tokens << new ReferenceToken(content)
+            if(isReferenceGrammar(phrase)) {
+                tokens << new ReferenceToken(phrase)
             }
-            else if(isPluralGrammar(content)) {
-                tokens << new PluralToken(content)
+            else if(isPluralGrammar(phrase)) {
+                tokens << new PluralToken(phrase)
             }
-            else if(isExpressionGrammar(content)) {
-                tokens << new ExpressionToken(content)
+            else if(isExpressionGrammar(phrase)) {
+                tokens << new ExpressionToken(phrase)
             }
-            else if(hasReferenceGrammar(content)) {
-                tokens = parseMultipleTokens(content, TokenRegex.REFERENCE)
+            else if(hasReferenceGrammar(phrase)) {
+                tokens = parseMultipleTokens(phrase, TokenRegex.REFERENCE)
+            }
+            else if(hasPluralGrammar(phrase)) {
+                tokens = parseMultipleTokens(phrase, TokenRegex.PLURAL)
+            }
+            else if(hasExpressionGrammar(phrase)) {
+                tokens = parseMultipleTokens(phrase, TokenRegex.EXPRESSION)
+            }
+            else {
+                tokens << new TextToken(phrase)
             }
 
             return tokens
         }
 
-        def private static boolean isReferenceGrammar(String content) {
-            return content ==~ /^t\(.*\)$/
+        def private static boolean isReferenceGrammar(String phrase) {
+            return phrase ==~ /^t\(.*\)$/
         }
 
-        def private static boolean isPluralGrammar(String content) {
-            return content ==~ /^p\(.*\)$/
+        def private static boolean isPluralGrammar(String phrase) {
+            return phrase ==~ /^p\(.*\)$/
         }
 
-        def private static boolean isExpressionGrammar(String content) {
-            return content ==~ /^%\{.*\}$/
+        def private static boolean isExpressionGrammar(String phrase) {
+            return phrase ==~ /^%\{.*\}$/
         }
 
-        def private static boolean hasReferenceGrammar(String content) {
-            return content ==~ /t\(.*\)/
+        def private static boolean hasReferenceGrammar(String phrase) {
+            return phrase ==~ /.*t\(.*\).*/
         }
 
-        def private static List<BaseToken> parseMultipleTokens(String content, TokenRegex tr) {
+        def private static boolean hasPluralGrammar(String phrase) {
+            return phrase ==~ /.*p\(.*\).*/
+        }
 
-            def matcher = content =~ /(.*)(${tr.regex})(.*)/
-            def before = matcher[0][1] ? matcher[0][1] : ""
+        def private static boolean hasExpressionGrammar(String phrase) {
+            return phrase ==~ /.*%\{.*\).*/
+        }
+
+        def private static List<BaseToken> parseMultipleTokens(String phrase, TokenRegex tr) {
+
+            def matcher = phrase =~ /(.*)(${tr.regex})(.*)/
+            def start = matcher[0][1] ? matcher[0][1] : ""
             def middle = matcher[0][2]
             def end = matcher[0][3] ? matcher[0][3] : ""
 
             def List<BaseToken> tokens = []
-            tokens.addAll(tokenize(before))
+            tokens.addAll(tokenize(start))
             tokens.addAll(tokenize(middle))
             tokens.addAll(tokenize(end))
 
