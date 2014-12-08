@@ -3,7 +3,7 @@ package unit.org.de.l10n.model.dictionary
 import org.de.l10n.model.dictionary.token.ExpressionToken
 import org.de.l10n.model.dictionary.token.PluralToken
 import org.de.l10n.model.dictionary.token.TextToken
-import org.junit.Test;
+import org.junit.Test
 
 
 import org.de.l10n.model.dictionary.Dictionary.Tokenizer

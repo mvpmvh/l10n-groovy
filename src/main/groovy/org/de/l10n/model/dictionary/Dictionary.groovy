@@ -7,12 +7,12 @@ import org.de.l10n.model.dictionary.token.ReferenceToken
 import org.de.l10n.model.dictionary.token.TextToken
 
 class Dictionary {
-    def private Map<String, ?> tokens;
-    def Map content;
+    def private Map<String, ?> tokens
+    def Map content
 
     def Dictionary(Map<String, ?> content=new java.util.HashMap<String, ?>()) {
-        this.content = content;
-        this.tokens = buildTokens(content);
+        this.content = content
+        this.tokens = buildTokens(content)
     }
 
     /*
@@ -33,31 +33,32 @@ class Dictionary {
      */
     def private Map<String, ?> buildTokens(Map<String, ?> content, List<String> prefixes=[]) {
 
-        def tokens = [:];
+        def tokens = [:]
 
         content.each {key, value ->
-            prefixes << key;
+
+            def path = prefixes + [key]
 
             if (value instanceof java.util.Map) {
-                tokens += buildTokens(value, prefixes);
+
+                tokens += buildTokens(value, path)
             }
             else {
-                def flatKey = prefixes.join(".");
-                tokens[flatKey] = Tokenizer.tokenize(value);
-                prefixes = [];
+                def flatKey = path.join(".")
+                tokens[flatKey] = Tokenizer.tokenize(value)
             }
         }
 
-        return tokens;
+        return tokens
     }
 
     def void setContent(Map<String, ?> content) {
-        this.content = content;
-        this.tokens = buildTokens(content);
+        this.content = content
+        this.tokens = buildTokens(content)
     }
 
     def Map<String, ?> getTokens() {
-        return tokens;
+        return tokens
     }
 
     def List<BaseToken> getTokens(String term) {
@@ -165,6 +166,10 @@ class Dictionary {
 
             return tokens
         }
+    }
+
+    def boolean isEmpty() {
+        return content.size() == 0
     }
 
 }

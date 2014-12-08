@@ -4,7 +4,7 @@ import org.de.l10n.model.dictionary.token.ExpressionToken
 import org.de.l10n.model.dictionary.token.PluralToken
 import org.de.l10n.model.dictionary.token.ReferenceToken
 import org.de.l10n.model.dictionary.token.TextToken
-import org.junit.Test;
+import org.junit.Test
 
 
 class TokenUnitTest {

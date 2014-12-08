@@ -8,7 +8,11 @@ import org.de.l10n.service.DictionaryService
 class Translator {
     def DictionaryService dictionaryService
 
-    def findTranslation(String term, String locale, String version, Map<String, ?> expression=new java.util.HashMap<String, ?>()) {
+    def Translator() {
+        dictionaryService = new DictionaryService()
+    }
+
+    def findTranslation(String term, String locale, String version, Map<String, ?> expression=new java.util.HashMap()) {
 
         def criteria = parseTerm(term)
         def dictionary = dictionaryService.findDictionary(criteria["dictionaryName"], locale, version)
@@ -29,7 +33,7 @@ class Translator {
     *
     *   will return ["dictionaryName": "common", "dictionaryPath": "common.terms.applyNow"]
      */
-    def private Map<String, ?> parseTerm(String term) {
+    def private Map<String, String> parseTerm(String term) {
 
         def tokens = term.tokenize(".");
         def dictionaryName = tokens[0];
@@ -39,19 +43,22 @@ class Translator {
         return criteria;
     }
 
+    /*
+    *   builds a translated string based upon to result of each token.translate()
+    */
     def private String translateTokens(List<BaseToken> tokens, Map<String, ?> expression, String locale, String version) {
 
-        def translation = ""
+        def translation = new StringBuilder("")
 
         tokens.each {token ->
             if(token instanceof ReferenceToken) {
-                translation += findTranslation(token.getPath(), locale, version, expression)
+                translation.append(findTranslation(token.getPath(), locale, version, expression))
             }
             else {
-                translation += token.translate(expression)
+                translation.append(token.translate(expression))
             }
         }
 
-        return translation
+        return translation.toString()
     }
 }

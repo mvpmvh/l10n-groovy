@@ -1,49 +1,40 @@
 package integration.org.de.l10n.model
 
-import org.de.l10n.model.Globalizer
-import org.de.l10n.model.Translator;
-import org.junit.Test;
-import org.junit.Before;
+
+import org.de.l10n.model.Translator
+import org.junit.Test
+import org.junit.Before
 
 class TranslatorIntegrationTest {
-    def translation
+    def Translator translator
 
     @Before
     void setUp() {
-        translation = new Translator(new Globalizer());
-
+        translator = new Translator()
     }
 
     @Test
     void "findTranslation should return the translation for existing key in dictionary"() {
 
-        def t = translation.findTranslation("common.terms.applyNow", "en-us", "fooVersion");
-
-        assert t == "Apply Now";
+        assert translator.findTranslation("common.terms.applyNow", "en-us", "fooVersion") == "Apply Now"
     }
 
     @Test
-    void "findTranslation should return dictionary section for key that is dictionary value" () {
+    void "findTranslation should not return dictionary section for partial key in dictionary" () {
 
-        def t = translation.findTranslation("common.terms", "en-us", "fooVersion");
-
-        assert t instanceof java.util.Map;
+        assert translator.findTranslation("common.terms", "en-us", "fooVersion") == "Missing Translation"
     }
 
     @Test
     void "findTranslation should return default locale translation when translation not found for non-default locale" () {
 
-        def t = translation.findTranslation("common.terms.applyNow", "unknown-locale", "fooVersion");
-
-        assert t == "Apply Now";
+        assert translator.findTranslation("common.terms.applyNow", "unknown-locale", "fooVersion") == "Apply Now"
     }
 
     @Test
     void "findTranslation should return 'Missing Translation' for missing key in dictionary" () {
 
-        def t = translation.findTranslation("fake.path.to.term", "en-us", "fooVersion");
-
-        assert t == "Missing Translation";
+        assert translator.findTranslation("fake.path.to.term", "en-us", "fooVersion") == "Missing Translation";
     }
 
 }

@@ -14,8 +14,10 @@ class DictionaryUnitTest {
             {
                 "nested1": {
                     "nested2": {
-                        "nested3" : "nested3"
-                    }
+                        "nested3": "nested3",
+                        "nested4": "nested4"
+                    },
+                    "nested5": "nested5"
                  },
                  "foo": "Foo"
              }
@@ -50,6 +52,8 @@ class DictionaryUnitTest {
         def flatDictionary = dictionary.buildTokens(testContent);
         def expectedDictionary = [
                 "nested1.nested2.nested3": [new TextToken("nested3")],
+                "nested1.nested2.nested4": [new TextToken("nested4")],
+                "nested1.nested5": [new TextToken("nested5")],
                 "foo": [new TextToken("Foo")]
         ]
 
