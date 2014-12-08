@@ -13,4 +13,9 @@ abstract class BaseToken {
 
     def abstract String getRightToken()
 
+    def boolean equals(BaseToken otherToken) {
+
+        return this.class == otherToken.class && this.content == otherToken.content
+    }
+
 }
