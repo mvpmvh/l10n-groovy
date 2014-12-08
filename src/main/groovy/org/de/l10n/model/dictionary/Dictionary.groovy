@@ -7,57 +7,62 @@ import org.de.l10n.model.dictionary.token.ReferenceToken
 import org.de.l10n.model.dictionary.token.TextToken
 
 class Dictionary {
-    def private Map<String, ?> terms;
+    def private Map<String, ?> tokens;
     def Map content;
 
     def Dictionary(Map<String, ?> content=new java.util.HashMap<String, ?>()) {
         this.content = content;
-        this.terms = buildTokens(content);
+        this.tokens = buildTokens(content);
     }
 
     /*
-    * given a map of keys, will return flat key structure.
+    * given a map of keys, will return flat key structure ok Token arrays.
     * For Example:
     *   {
     *       "nested1":  {
-    *           "nested2": "nested2"
+    *           "nested2": "nested2 %{expression1} p('singular || plural)"
     *       },
     *       "foo": "Foo"
     *   }
     *
     *   returns map structure
     *   {
-    *       "nested1.nested" = "nested2",
-    *       "foo": "Foo"
+    *       "nested1.nested" = [TextToken, ExpressionToken, PluralToken],
+    *       "foo": [TextToken]
     *   }
      */
     def private Map<String, ?> buildTokens(Map<String, ?> content, List<String> prefixes=[]) {
 
-        def terms = [:];
+        def tokens = [:];
 
         content.each {key, value ->
             prefixes << key;
 
             if (value instanceof java.util.Map) {
-                terms += buildTokens(value, prefixes);
+                tokens += buildTokens(value, prefixes);
             }
             else {
                 def flatKey = prefixes.join(".");
-                terms[flatKey] = Tokenizer.tokenize(value);
+                tokens[flatKey] = Tokenizer.tokenize(value);
                 prefixes = [];
             }
         }
 
-        return terms;
+        return tokens;
     }
 
     def void setContent(Map<String, ?> content) {
         this.content = content;
-        this.terms = buildTokens(content);
+        this.tokens = buildTokens(content);
     }
 
-    def Map<String, ?> getTerms() {
-        return terms;
+    def Map<String, ?> getTokens() {
+        return tokens;
+    }
+
+    def List<BaseToken> getTokens(String term) {
+
+        return (tokens[term] == null ? [] : tokens[term])
     }
 
     def private static class Tokenizer {
@@ -73,6 +78,13 @@ class Dictionary {
             }
         }
 
+        /* identifies all possible tokens in a phrase, returning a list of found tokens
+        *   For example:
+        *   tokenize("See the %{color} fox run")
+        *
+        *   will return...
+        *   [TextToken("See the"), ExpressionToken("%{color}"), TextToken("fox run")]
+        */
         def static List<BaseToken> tokenize(String phrase) {
 
             def tokens = []
@@ -126,17 +138,30 @@ class Dictionary {
             return phrase ==~ /.*%\{.*\}.*/
         }
 
+        /*
+        * parses out a particular token from a phrase. Any remaining unparsed tokens will be split into separate phrases
+        * occurring before the parsed token and after the parsed token respectively.
+        * For example:
+        *
+        * parseMultipleTokens("See the %{color} fox run", TokenRegex.EXPRESSION)
+        *
+        * will return...
+        * beforeMatched = "See the"
+        * matched = "%{color}"
+        * afterMatched = "fox run"
+        *
+         */
         def private static List<BaseToken> parseMultipleTokens(String phrase, TokenRegex tr) {
 
             def matcher = phrase =~ /(.*)(${tr.regex})(.*)/
-            def start = matcher[0][1] ? matcher[0][1] : ""
-            def middle = matcher[0][2]
-            def end = matcher[0][3] ? matcher[0][3] : ""
+            def beforeMatched = matcher[0][1] ? matcher[0][1] : ""
+            def matched = matcher[0][2]
+            def afterMatched = matcher[0][3] ? matcher[0][3] : ""
 
             def List<BaseToken> tokens = []
-            tokens.addAll(tokenize(start))
-            tokens.addAll(tokenize(middle))
-            tokens.addAll(tokenize(end))
+            tokens.addAll(tokenize(beforeMatched))
+            tokens.addAll(tokenize(matched))
+            tokens.addAll(tokenize(afterMatched))
 
             return tokens
         }

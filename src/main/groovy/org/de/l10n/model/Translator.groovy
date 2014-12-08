@@ -1,18 +1,25 @@
 package org.de.l10n.model
 
+import org.de.l10n.model.dictionary.token.BaseToken
+import org.de.l10n.model.dictionary.token.ReferenceToken
 import org.de.l10n.service.DictionaryService
 
 
 class Translator {
-    def DictionaryService dictionaryService;
+    def DictionaryService dictionaryService
 
-    def findTranslation(String term, String locale, String version) {
+    def findTranslation(String term, String locale, String version, Map<String, ?> expression=new java.util.HashMap<String, ?>()) {
 
-        def criteria = parseTerm(term);
-        def dictionary = dictionaryService.findDictionary(criteria["dictionaryName"], locale, version);
-        def translation = findTerm(dictionary, criteria["dictionaryPath"])
+        def criteria = parseTerm(term)
+        def dictionary = dictionaryService.findDictionary(criteria["dictionaryName"], locale, version)
+        def tokens = dictionary.getTokens(term)
+        def translation = translateTokens(tokens, expression, locale, version)
 
-        return translation;
+        if(translation == "") {
+            translation = "Missing Translation"
+        }
+
+        return translation
     }
 
     /*
@@ -32,21 +39,19 @@ class Translator {
         return criteria;
     }
 
-    def private findTerm(Map<String, ?> dictionary, List<String> paths) {
+    def private String translateTokens(List<BaseToken> tokens, Map<String, ?> expression, String locale, String version) {
 
-        def dictionaryValue = dictionary;
+        def translation = ""
 
-        for(String term in paths) {
-            if(dictionaryValue instanceof java.util.Map && dictionaryValue.containsKey(term)) {
-                dictionaryValue = dictionaryValue[term];
+        tokens.each {token ->
+            if(token instanceof ReferenceToken) {
+                translation += findTranslation(token.getPath(), locale, version, expression)
             }
             else {
-                dictionaryValue = "Missing Translation";
-                //TODO: log missing translation
-                break;
+                translation += token.translate(expression)
             }
         }
 
-        return dictionaryValue;
+        return translation
     }
 }
