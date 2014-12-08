@@ -1,13 +1,14 @@
 package unit.org.de.l10n.model.dictionary
 
 import groovy.json.JsonSlurper
-import org.junit.Test;
-import org.junit.Before;
+import org.de.l10n.model.dictionary.token.TextToken
+import org.junit.Test
+import org.junit.Before
 
 import org.de.l10n.model.dictionary.Dictionary
 
 class DictionaryUnitTest {
-    def Dictionary dictionary;
+    def Dictionary dictionary
     def String testJSON =
         '''
             {
@@ -18,36 +19,39 @@ class DictionaryUnitTest {
                  },
                  "foo": "Foo"
              }
-        ''';
+        '''
 
-    def testContent = new JsonSlurper().parseText(testJSON);
+    def testContent = new JsonSlurper().parseText(testJSON)
 
     @Before
     void setUp() {
-        dictionary = new Dictionary();
+        dictionary = new Dictionary()
     }
 
     @Test
-    void "default dictionary should have empty terms" () {
+    void "empty dictionary should have empty tokens" () {
 
-        assert dictionary.getTerms() instanceof java.util.Map;
-        assert dictionary.getTerms().size() == 0;
+        assert dictionary.getTokens() instanceof java.util.Map
+        assert dictionary.getTokens().size() == 0
     }
 
     @Test
-    void "dictionary should build terms when content set" () {
+    void "dictionary should build tokens when content set" () {
 
-        dictionary.setContent(testContent);
+        dictionary.setContent(testContent)
 
-        assert dictionary.getTerms() instanceof java.util.Map;
-        assert dictionary.getTerms().size() > 0;
+        assert dictionary.getTokens() instanceof java.util.Map
+        assert dictionary.getTokens().size() > 0
     }
 
     @Test
-    void "buildTerms should return flat keys of content" () {
+    void "buildTokens should return flat keys of tokens" () {
 
-        def flatDictionary = dictionary.buildTerms(testContent);
-        def expectedDictionary = ["nested1.nested2.nested3": "nested3", "foo": "Foo"];
+        def flatDictionary = dictionary.buildTokens(testContent);
+        def expectedDictionary = [
+                "nested1.nested2.nested3": [new TextToken("nested3")],
+                "foo": [new TextToken("Foo")]
+        ]
 
         assert expectedDictionary == flatDictionary
     }
