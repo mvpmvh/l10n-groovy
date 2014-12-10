@@ -1,5 +1,6 @@
 package org.de.l10n.service
 
+import groovy.transform.Memoized
 import org.de.l10n.model.dictionary.Dictionary
 import static org.de.l10n.model.Globalizer.defaultLocale
 import static org.de.l10n.model.Globalizer.localeDirectory
@@ -14,6 +15,7 @@ class DictionaryService {
     * If locale is not the default locale, the default locale dictionary content will be appended to requested
     * Dictionary
      */
+    @Memoized
     def Dictionary findDictionary(String name, String locale=defaultLocale, String version) {
 
         def dictionaryContent = findDictionaryContent(name, locale)
