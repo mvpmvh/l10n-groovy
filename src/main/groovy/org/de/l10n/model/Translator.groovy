@@ -26,6 +26,13 @@ class Translator {
         return translation
     }
 
+    def Map<String, ?> findDictionaryContent(String dictionaryName, String locale, String version) {
+        def dictionary = dictionaryService.findDictionary(dictionaryName, locale, version)
+        def content = dictionary.getContent()
+
+        return content
+    }
+
     /*
     * parses a term to identify the dictionary name and the path of the key to translate
     * For Example:

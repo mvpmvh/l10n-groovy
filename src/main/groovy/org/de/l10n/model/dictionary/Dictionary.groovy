@@ -40,7 +40,6 @@ class Dictionary {
             def path = prefixes + [key]
 
             if (value instanceof java.util.Map) {
-
                 tokens += buildTokens(value, path)
             }
             else {
