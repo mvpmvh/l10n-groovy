@@ -1,5 +1,6 @@
 package unit.org.de.l10n.model.dictionary
 
+import org.de.l10n.model.dictionary.token.DateToken
 import org.de.l10n.model.dictionary.token.ExpressionToken
 import org.de.l10n.model.dictionary.token.PluralToken
 import org.de.l10n.model.dictionary.token.TextToken
@@ -52,6 +53,16 @@ class TokenizerUnitTest {
         def phrase = "Hello, World!"
         def tokens = Tokenizer.tokenize(phrase)
         def expectedTokens = [new TextToken("Hello, World!")]
+
+        assert expectedTokens == tokens
+    }
+
+    @Test
+    void "tokenize should return date token when date grammar applied" () {
+
+        def phrase = "d('MM-dd-yyyy')"
+        def tokens = Tokenizer.tokenize(phrase)
+        def expectedTokens = [new DateToken("d('MM-dd-yyyy')")]
 
         assert expectedTokens == tokens
     }
