@@ -1,5 +1,6 @@
 package unit.org.de.l10n.model.dictionary.token
 
+import org.de.l10n.model.dictionary.token.DateToken
 import org.de.l10n.model.dictionary.token.ExpressionToken
 import org.de.l10n.model.dictionary.token.PluralToken
 import org.de.l10n.model.dictionary.token.ReferenceToken
@@ -69,5 +70,14 @@ class TokenUnitTest {
         def token = new ReferenceToken("t('path.to.term')")
 
         assert token.getPath() == "path.to.term"
+    }
+
+    @Test
+    void "DateToken should return formatted date" () {
+
+        def token = new DateToken("d('MM-dd-yyyy')")
+        def expression = ["date": "12/04/2014"]
+
+        assert token.translate(expression) == "12-04-2014"
     }
 }
