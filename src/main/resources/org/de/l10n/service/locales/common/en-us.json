@@ -1,5 +1,14 @@
 {
     "common": {
+        "configuration": {
+            "date": {
+                "format": {
+                    "jQueryUI": "mm/dd/yy",
+                    "shortComma": "MMM D, YYYY",
+                    "shortSlash": "M/D/YYYY"
+                }
+            }
+        },
         "terms": {
             "applyNow": "Apply Now",
             "close": "Close",

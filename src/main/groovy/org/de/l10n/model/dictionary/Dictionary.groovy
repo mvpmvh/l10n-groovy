@@ -1,6 +1,7 @@
 package org.de.l10n.model.dictionary
 
 import org.de.l10n.model.dictionary.token.BaseToken
+import org.de.l10n.model.dictionary.token.DateToken
 import org.de.l10n.model.dictionary.token.ExpressionToken
 import org.de.l10n.model.dictionary.token.PluralToken
 import org.de.l10n.model.dictionary.token.ReferenceToken
@@ -40,7 +41,6 @@ class Dictionary {
             def path = prefixes + [key]
 
             if (value instanceof java.util.Map) {
-
                 tokens += buildTokens(value, path)
             }
             else {
@@ -70,7 +70,8 @@ class Dictionary {
         def private static final enum TokenRegex  {
             REFERENCE("t\\(.+\\)"),
             PLURAL("p\\(.+\\)"),
-            EXPRESSION("%\\{.+}")
+            EXPRESSION("%\\{.+}"),
+            DATE("\\d(.+\\)")
 
             def private final String regex
 
@@ -99,6 +100,9 @@ class Dictionary {
             else if(isExpressionGrammar(phrase)) {
                 tokens << new ExpressionToken(phrase)
             }
+            else if(isDateExpressionGrammar(phrase)) {
+                tokens << new DateToken(phrase)
+            }
             else if(hasReferenceGrammar(phrase)) {
                 tokens = parseMultipleTokens(phrase, TokenRegex.REFERENCE)
             }
@@ -107,6 +111,9 @@ class Dictionary {
             }
             else if(hasExpressionGrammar(phrase)) {
                 tokens = parseMultipleTokens(phrase, TokenRegex.EXPRESSION)
+            }
+            else if(hasDateExpressionGrammar(phrase)) {
+                tokens = parseMultipleTokens(phrase, TokenRegex.DATE)
             }
             else {
                 tokens << new TextToken(phrase)
@@ -127,6 +134,10 @@ class Dictionary {
             return phrase ==~ /^%\{.*\}$/
         }
 
+        def private static boolean isDateExpressionGrammar(String phrase) {
+            return phrase ==~ /^d\(.*\)$/
+        }
+
         def private static boolean hasReferenceGrammar(String phrase) {
             return phrase ==~ /.*t\(.*\).*/
         }
@@ -137,6 +148,10 @@ class Dictionary {
 
         def private static boolean hasExpressionGrammar(String phrase) {
             return phrase ==~ /.*%\{.*\}.*/
+        }
+
+        def private static boolean hasDateExpressionGrammar(String phrase) {
+            return phrase ==~/.*d\(.*\).*/
         }
 
         /*

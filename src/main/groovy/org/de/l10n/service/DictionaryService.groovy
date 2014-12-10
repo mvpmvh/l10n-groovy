@@ -35,13 +35,13 @@ class DictionaryService {
     def private Map<String, ?> findDictionaryContent(String name, String locale) {
 
         def dictionaryContent = [:]
-        def final InputStream inputStream = getClass().getResourceAsStream("${localeDirectory}/${name}/${locale}.json");
+        def final InputStream inputStream = getClass().getResourceAsStream("${localeDirectory}/${name}/${locale}.json")
 
         if (inputStream != null) {
             dictionaryContent = slurper.parse(inputStream)
         }
 
-        return dictionaryContent;
+        return dictionaryContent
     }
 
     /*
