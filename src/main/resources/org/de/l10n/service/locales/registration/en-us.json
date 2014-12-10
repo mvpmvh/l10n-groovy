@@ -1,0 +1,112 @@
+{
+    "registration": {
+        "accountSetup": {
+            "title": "Discovery Education account setup",
+            "messages": {
+                "toContinue": "To continue, choose one of the following:",
+                "servicesLogin": "If you are a customer who uses a school portal, Learning Management System (LMS) or a custom discoveryeducation.com page to login to Discovery Education services, please login there first and then access",
+                "canada": "Discovery Education Canada is committed to helping educators transform teaching and learning. We search for like-minded organizations that share our values and we are proud that Rogers Communications is lending their support towards helping teachers effectively incorporate the Discovery Education Techbook&trade; digital textbook into their classrooms."
+            },
+            "labels": {
+                "userNew": "Are you creating a new Discovery Education Login?",
+                "userExisting": "Are you an existing Discovery Education user?"
+            },
+            "submitText": {
+                "userNew": "New user",
+                "userExisting": "Existing user"
+            }
+        },
+        "login": {
+            "title": "Login",
+            "messages": {
+                "forgotLogin": "Forgot username or password?",
+                "existingLogin": "Use your existing Discovery Education username and password.",
+                "createNew": "Passcode/Create new user"
+            },
+            "labels": {
+                "username": "Username",
+                "password": "Password"
+            },
+            "submitText": "Login"
+        },
+        "register": {
+            "title": "Register",
+            "messages": {
+                "unregistered": "If you don't have a registered account with Discovery Education, create an account now. It's free and easy, and allows you to:"
+            },
+            "freeAccess": {
+                "exclusiveContent": "Access exclusive classroom resources to engage students",
+                "onDemand": "Explore on-demand professional development resources",
+                "latestNews": "Stay up-to-date with the latest news from Discovery Education and its partners"
+            },
+            "submitText": "Create an account"
+        },
+        "premiumAccount": {
+            "title": "Premium Account",
+            "labels": {
+                "passcode": "Passcode",
+                "registrationCode": "Registration Code",
+                "previousAccount": "Already have an account?",
+                "whatIsPasscode": "What is a Passcode?"
+            },
+            "passcodeModal": {
+                "title": "What is a Passcode?",
+                "messages": {
+                    "main": "A passcode allows new users to create and register a personal username and password for access to Discovery Education Products. If you were already provided with a username and password, please %{anchorOpen}login here%{anchorClose}.",
+                    "contactAdmin": "Contact your school's Discovery Education administrator to obtain your passcode."
+                },
+                "submitText": "Got it"
+            },
+            "placeholders": {
+                "registrationCode": "ex. 1234-5678"
+            },
+            "submitText": "Submit"
+        },
+        "limitedAccount": {
+            "title": "Limited account*",
+            "messages": {
+                "free": "*FREE Limited access granted"
+            },
+            "submitText": "Sign up"
+        },
+        "newUser": {
+            "title": "Welcome to Discovery Education",
+            "showExtraInfo": "Please provide the following information so that Discovery Education may inform you about our services and follow up with you about your Discovery Education Techbook&trade; digital textbook trial.",
+            "submitText": "Sign up",
+            "legends": {
+                "personal": "Tell us who you are",
+                "login": "Create Login Information",
+                "searchForDistrict": "Search for your District or School Building"
+            },
+            "labels": {
+                "terms": "I have read and agree to the %{open}terms of use%{close}."
+            },
+            "messages": {
+                "needMoreInfo": "We need more information to confirm your account.",
+                "findDisctrict": "Find your building by either entering your Zip/Postal Code or selecting your State and City. Choose your building from the list that will appear below."
+            },
+            "newsletters": {
+                "legend": "Newsletters",
+                "letters": {
+                    "monthly": "Subscribe to the Discovery Education monthly newsletter (stay up-to-date about new content, special events, professional development opportunities, as well as enhancements to your service).",
+                    "marketing": "Please notify me about special offers, free resources, new features and developments, and valuable promotions and news from Discovery Education and its partners."
+                }
+            }
+        },
+        "forgot": {
+            "title": "Forgot your username or password?",
+            "description": "Please provide the username or email address that you used when you signed up for your Discovery Education account. We will send you an email that will allow you to reset your password.",
+            "labels": {
+                "usernameEmail": "Username or email"
+            },
+            "submitText": "Send verification email"
+        },
+        "help": {
+            "title": "Need more help?",
+            "contactUs": "Contact us",
+            "phone": "Phone - 1-800-323-9084",
+            "email": "Email - education_info@discovery.com",
+            "twitter": "Twitter - @DESupportStars"
+        }
+    }
+}

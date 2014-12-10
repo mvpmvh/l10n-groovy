@@ -1,0 +1,52 @@
+{
+    "newDen": {
+        "apply": {
+            "denStar": "Apply to Become a DEN STAR",
+            "nowDenStar": "Apply Now to Become a DEN STAR",
+            "star": "Apply to Become a STAR",
+            "starDescription" : "As a Discovery Education partner, you are already a member of this amazing community known as the DEN. However, you may want to become more active and become a DEN STAR. STAR Discovery Educators are the most active members of the DEN Community and receive special benefits from Discovery Education.",
+            "starEvents": "Apply to become a STAR Events"
+        },
+        "becomeAStar": {
+            "easy": "Becoming a STAR is easy:",
+            "steps": "Becoming a STAR Discovery Educator is easy. Educators just need to commit to sharing the power of Discovery Education and digital media with their colleagues, then do so."
+        },
+        "benefits": {
+            "access": "Access to instructional resources posted by other Discovery Educators",
+            "blog": "Your own blog, a place to collaborate and share with others",
+            "communications": "Personal communications and support from the DEN including the DEN Weekly Update",
+            "discovery": "Access to exclusive STAR Discovery Educator promotions and contests",
+            "opportunities": "Opportunities to attend Discovery events",
+            "professionalDevelopment": "STAR-only professional development opportunities such as the DEN Summer Institute"
+        },
+        "byTheNumbers": {
+            "benefits": "Benefits by the Numbers",
+            "infographic": "(click on above infographic to expand)",
+            "respondents": "<span>97%</span> of respondents indicated that the DEN had improved and increased their use of technology"
+        },
+        "assistDescription": "Assist your colleagues as they implement this idea or strategy",
+        "comingSoon": "Coming Soon",
+        "communityDescription": "<p>is a global community of educators passionate about <strong>teaching</strong> with digital media, <strong>sharing</strong> resources, <strong>collaborating</strong> and <strong>networking</strong>.</p><p>Find out how a <strong>DEN</strong> membership can help you lead the way in transforming your classroom and inspiring your students' curiosity.</p>",
+        "communitySite": "DEN Community Site",
+        "denBrarian": "DENbrarian",
+        "denBrarianDescription": "DENbrarians find great Discovery Resources and other online materials to correlate with a monthly book selection.",
+        "denChat": "DEN Chat",
+        "denChatDescription": "#DENchat brings people together on Twitter to discuss a weekly topic each Thursday at 8 pm ET.",
+        "denConnects": "DEN Connects",
+        "denConnectDescription": "DEN Connects is an innovative project from the Discovery Educator Network that encourages students and educators to connect to Discovery Education resources and each other.",
+        "denHeader": "The Discovery Educator Network (DEN)",
+        "denDescription": "The Discovery Educator Network (DEN) connects members across town and around the world through social media, virtual conferences, and in-person events. Fostering valuable networking, idea-sharing and inspiration, the DEN was founded in 2005 and has grown into one of the largest, most active professional education learning communities.",
+        "denNumbers": "DEN by the Numbers",
+        "denVice": "DENVice",
+        "denViceDescription": "DENvice is a Facebook page where DEN STARS can continue conversations between the face-to-face and virtual events. It's place to post your questions and get advice from DEN members.",
+        "denZone": "DENzone",
+        "denZoneDescription": "The Discovery Educator Network and BAM Radio Network have partnered to bring you The DEN Zone. David Fisher hosts the program which focuses on highlighting DEN community activities and amplifying DEN voices on the topics you really care about.",
+        "readWeekly": "Read the DEN Weekly Update",
+        "reportDescription": "Report what you've done",
+        "shareDescription": "Share something you've learned about using Discovery Education resources with your colleagues",
+        "starBenefit": "Benefits of being a STAR",
+        "starDenReceive": "STAR Discovery Educators receive the following:",
+        "teachDescription": "Teach your colleagues about this idea or strategy",
+        "weeklyUpdates": "DEN Weekly Updates"
+    }
+}

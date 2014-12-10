@@ -1,0 +1,14 @@
+{
+    "studentcenter": {
+        "myFavorites" : "My favourites",
+
+        "nav": {
+            "getInvolved": "Get involved",
+            "resourceCenter": "Services",
+            "welcome": "Welcome"
+        },
+        "welcome": {
+            "research": "Research the services"
+        }
+    }
+}

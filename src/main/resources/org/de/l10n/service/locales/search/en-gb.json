@@ -1,0 +1,25 @@
+{
+    "search" : {
+        "bestMatch": "Best match",
+        "clearAll": "Clear all",
+        "curriculumStandardsIndex": "Curriculum standards index",
+        "curriculumStandardsSearch": "Curriculum standards search",
+        "curriculumStandardsSearchResults": "Curriculum standards search results",
+        "detailView": "Detail view",
+        "gridView": "Grid view",
+        "launchConcept": "Launch concept",
+        "loadingResults": "Loading results...",
+        "mediaType": "Resource type",
+        "mostPopularThisWeek": "Most popular this week",
+        "narrowMyResults": "Narrow my results",
+        "paginationHelp": "Press the left or right arrow keys for previous or next pages.",
+        "perPage": "Per page",
+        "results": "results",
+        "recentlyAdded": "Recently added",
+        "resultsByConcept": "Results by concept",
+        "searchResults": "Search results",
+        "scrollTop": "Scroll to top",
+        "studentAssessment": "Student assessment",
+        "view": "view || views"
+    }
+}

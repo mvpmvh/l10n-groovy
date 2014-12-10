@@ -1,0 +1,30 @@
+{
+    "search": {
+        "actions": "Actions",
+        "bestMatch": "Best Match",
+        "clearAll": "Clear All",
+        "curriculumStandardsIndex": "Curriculum Standards Index",
+        "curriculumStandardsSearch": "Curriculum Standards Search",
+        "curriculumStandardsSearchResults": "Curriculum Standards Search Results",
+        "detailView": "Detail View",
+        "detailViewDescription": "show results in detail view",
+        "gridView": "Grid View",
+        "gridViewDescription": "show results in grid view",
+        "launchConcept": "Launch Concept",
+        "loadingResults": "Loading Results...",
+        "mediaType": "Media Type",
+        "mostPopularThisWeek": "Most Popular This Week",
+        "narrowMyResults": "Narrow My Results",
+        "paginationHelp": "Press the Left or Right arrow keys for Previous or Next pages.",
+        "perPage": "Per Page",
+        "recentlyAdded": "Recently Added",
+        "results": "Results",
+        "resultsByConcept": "Results by Concept",
+        "scrollTop": "Scroll to Top",
+        "searchResults": "Search Results",
+        "sortBy": "Sort by",
+        "studentAssessment": "Student Assessment",
+        "view": "View || Views",
+        "youHaveSelected": "You have selected"
+    }
+}

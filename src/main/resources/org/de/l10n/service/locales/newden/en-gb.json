@@ -1,0 +1,13 @@
+{
+    "newDen": {
+        "apply": {
+            "denStar": "Apply to become a DEN STAR",
+            "nowDenStar": "Apply now to become a DEN STAR",
+            "star": "Apply to become a STAR",
+            "starDescription": "As a Discovery Education partner, you are already a member of this amazing community known as the DEN. However, you may want to become more active and become a DEN STAR. STAR Discovery Educators are the most active members of the DEN Community and receive special benefits from Discovery Education.",
+            "starEvents": "Apply to become a STAR events"
+        },
+        "comingSoon": "Coming soon",
+        "communityDescription": "<p>is a global community of teachers passionate about <strong>teaching</strong> with digital media, <strong>sharing</strong> resources, <strong>collaborating</strong> and <strong>networking</strong>.</p><p>Find out how a <strong>DEN</strong> membership can help you lead the way in transforming your classroom and inspiring your students' curiosity.</p>"
+    }
+}

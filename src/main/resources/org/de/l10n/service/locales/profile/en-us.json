@@ -1,0 +1,159 @@
+{
+    "profile": {
+
+        "accountSettingsForm": {
+            "titles": {
+                "changeUsername": "Change Username",
+                "resetPassword": "Reset Password",
+                "changeSchool": "Change School"
+            },
+            "labels": {
+                "username": "Username",
+                "changeSchool": "Please enter a passcode provided by your school/organization.",
+                "currentPassword": "Please enter your current password",
+                "newPassword": "Please enter your new password",
+                "newPasswordConfirm": "Please re-enter your new password"
+            },
+            "submitText": {
+                "changePassword": "Change Password"
+            },
+            "changeSchool": {
+                "isMultiSite": "As a multi-site user you must contact your administrator to change your primary school."
+            },
+            "validation": {
+                "passwordSuccess": "Your password has been updated.",
+                "passwordError": "There was a problem changing your password. Please try again.",
+                "passwordInvalid": "Your passcode is invalid",
+                "schoolSuccess": "Your school has been updated. This page will reload when you click \"OK\"",
+                "schoolError": "There was a problem changing your school. Please try again.",
+                "usernameSuccess": "Your username has been updated!",
+                "usernameError": "Sorry, there was a problem. Please try again later.",
+                "usernameInvalidLength": "Usernames must be at least 6 alphanumeric characters."
+            }
+        },
+
+        "basicInfo": {
+            "profileImage": "Profile image",
+            "at": "at",
+            "isEditable": "See how others view your profile",
+            "isOwner": "t(common.terms.edit) Profile"
+        },
+
+        "privacyModal": {
+            "label": "Public Profile",
+            "description": "Other Discovery Education users can:",
+            "rightsTo": {
+                "profile": "See your public profile",
+                "shared": "See content that you've shared",
+                "liked": "See content that you've liked"
+            },
+            "okay": "t(common.terms.okay)"
+        },
+
+        "profileDetail": {
+            "labels": {
+                "grades": "Grades",
+                "subjects": "Subjects",
+                "interests": "Interests",
+                "contact": "Contact &amp; Social Media"
+            },
+            "isEmpty": {
+                "grades": "%{name} has not added any grades.",
+                "subjects": "%{name} has not added any subjects.",
+                "interests": "%{name} has not added any interests.",
+                "contact": "%{name} has not added any social media links."
+            }
+        },
+
+        "profileForm": {
+            "titles": {
+                "information": "Information",
+                "about": "About",
+                "contact": "Contact &amp; Social Media",
+                "subscribe": "Subscribe"
+            },
+            "labels": {
+                "privacy": "Would you like your profile to be public or private?",
+                "firstName": "First",
+                "lastName": "Last",
+                "title": "Title",
+                "email": "Contact Email",
+                "emailConfirm": "Confirm Contact Email",
+                "emailPublic": "Public Email",
+                "subjects": "Subjects",
+                "grades": "Grades",
+                "bio": "Bio",
+                "interests": "Interests",
+                "twitterUrl": "twitter.com/",
+                "facebookUrl": "facebook.com/",
+                "linkedInUrl": "linkedin.com/",
+                "edmodoUrl": "edmodo.com/",
+                "pinterestUrl": "pinterest.com/",
+                "newsletter": "Stay up-to-date about new content, special events, professional development opportunities, as well as enhancements to your service by email.",
+                "marketing": "Please notify me by email about special offers, free resources, new features and developments, and valuable promotions and news from Discovery Education and its partners.",
+                "hasAcceptedTerms": "I have read and understand the %{termsOfUseLink}terms of use%{endLink}, %{privacyPolicyLink}privacy policy%{endLink}, and %{userContentPolicyLink}user generated content policy%{endLink}",
+                "prefix": "Prefix",
+                "prefixOther": "Other (Please Specify)"
+            },
+            "values": {
+                "public": "Public",
+                "private": "Private",
+                "selectPrefix": "Select Prefix"
+            },
+            "learnMore": "Learn more",
+            "submitText": "Save Profile",
+            "validation": {
+                "emailConfirmation": "Email t(common.forms.validation.confirmation)",
+                "emailIsValid": "t(common.forms.validation.validName) email address",
+                "bioLength": "Bio t(common.forms.validation.length)",
+                "emailTaken": "This email has already been taken.",
+                "validUrl": "Please enter a valid %{name} URL.",
+                "formErrorIntro": "Uh oh!  It looks like there are issues that need to be resolved.  Please update the following fields and try again."
+            }
+        },
+
+        "profileImageModal": {
+            "editProfilePicture": "t(common.terms.edit) Profile Picture",
+            "upload": "Upload",
+            "takePicture": "Take Picture",
+            "chooseImage": "Choose image",
+            "isUpdated": "Profile image updated",
+            "ok": "t(common.terms.okay)",
+            "close": "t(common.terms.close)"
+        },
+
+        "profileUnavailable": {
+            "editProfile": "t(common.terms.edit) Profile",
+            "isPrivate": "This profile is private",
+            "isPrivateOwner": "Your profile is set to private"
+        },
+
+        "saveSuccessAlert": {
+            "backToAppHome": "Back to My DE",
+            "isUpdated": "Your profile has been updated!"
+        },
+
+        "tabView": {
+            "tabs": {
+                "profile": "Profile",
+                "accountSettings": "Account Settings"
+            },
+            "prompts": {
+                "confirm": "You have not saved your profile. Are you sure you would like to continue?",
+                "unload": "You have not saved your profile."
+            }
+        },
+
+        "userFeed": {
+            "title": "Activities",
+            "isEmpty": "No recent activity",
+            "messages": {
+                "added": "%{name} added %{link}",
+                "liked": "%{name} liked %{link}",
+                "searched": "%{name} searched for %{link}",
+                "shared": "%{name} added %{link}",
+                "viewed": "%{name} viewed %{link}"
+            }
+        }
+    }
+}
