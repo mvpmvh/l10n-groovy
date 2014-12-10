@@ -1,0 +1,35 @@
+{
+    "common": {
+        "configuration": {
+            "date": {
+                "format": {
+                    "jQueryUI": "dd/mm/yy",
+                    "shortComma": "D MMM, YYYY",
+                    "shortSlash": "D/M/YYYY"
+                }
+            }
+        },
+        "terms": {
+            "applyNow": "Apply now",
+            "close": "Close",
+            "edit": "Edit",
+            "okay": "Okay",
+            "grade": "Key Stage",
+            "gradeLevel" : "Year Level",
+            "educator": "teacher || teachers",
+            "learnMore": "Learn more"
+        },
+        "forms": {
+            "validation": {
+                "required": "This field can't be blank",
+                "agreement": "You must agree to terms to continue",
+                "confirmation": "must match confirmation",
+                "length": "must be less than 1000 characters.",
+                "validName": "Please enter a valid"
+            }
+        },
+        "news": {
+            "title": "Daily News"
+        }
+    }
+}

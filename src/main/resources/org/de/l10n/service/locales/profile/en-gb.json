@@ -1,0 +1,66 @@
+{
+    "profile": {
+
+        "accountSettingsForm": {
+            "titles": {
+                "changeUsername": "Change username",
+                "resetPassword": "Reset password",
+                "changeSchool": "Change school"
+            },
+            "submitText": {
+                "changePassword": "Change password"
+            }
+        },
+
+        "basicInfo": {
+            "profileImage": "Profile image",
+            "isOwner": "t(common.terms.edit) profile"
+        },
+
+        "privacyModal": {
+            "label": "Public profile"
+        },
+
+        "profileDetail": {
+            "labels": {
+                "grades": "Years taught",
+                "contact": "Contact &amp; Social Media"
+            }
+        },
+
+        "profileForm": {
+            "labels": {
+                "firstName": "First name",
+                "lastName": "Last name",
+                "title": "Job title",
+                "email": "Contact email",
+                "emailConfirm": "Confirm contact email",
+                "emailPublic": "Public email",
+                "grades": "Years taught",
+                "prefix": "Title"
+            },
+            "values": {
+                "selectPrefix": "Select title"
+            },
+            "learnMore": "Learn more",
+            "submitText": "Save profile"
+        },
+
+        "profileImageModal": {
+            "editProfilePicture": "t(common.terms.edit) profile picture",
+            "takePicture": "Take picture",
+            "chooseImage": "Choose image",
+            "isUpdated": "Profile image updated"
+        },
+
+        "profileUnavailable": {
+            "editProfile": "t(common.terms.edit) profile"
+        },
+
+        "tabView": {
+            "tabs": {
+                "accountSettings": "Account settings"
+            }
+        }
+    }
+}

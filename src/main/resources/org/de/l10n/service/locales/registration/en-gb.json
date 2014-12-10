@@ -1,0 +1,17 @@
+{
+    "registration": {
+        "premiumAccount": {
+            "title": "Create your account",
+            "labels": {
+                "passcode": "Enter your passcode"
+            },
+            "passcodeModal": {
+                "title": "What is a passcode?"
+            }
+        },
+        "help": {
+            "phone": "Freephone: 0800 6 527 527",
+            "email": "Email: discoveryeducationuk@discovery.com"
+        }
+    }
+}

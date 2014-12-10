@@ -1,0 +1,9 @@
+{
+    "player": {
+        "terms": {
+            "currentlyDownloading": "Currently Downloading",
+            "standards": "Standards",
+            "playLocalMediaLabel": "Play from Local Media Server"
+        }
+    }
+}

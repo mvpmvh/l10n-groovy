@@ -1,0 +1,9 @@
+{
+    "player": {
+        "terms": {
+            "currentlyDownloading": "Currently downloading",
+            "standards": "Curriculum objectives",
+            "playLocalMediaLabel": "Play from local media server"
+        }
+    }
+}

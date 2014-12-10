@@ -1,0 +1,17 @@
+{
+    "studentcenter" : {
+        "myFavorites" : "My Favorites",
+        "nav": {
+            "assignments": "Assignments",
+            "blog": "Blog",
+            "games": "Games",
+            "hi": "Hi",
+            "getInvolved": "Get Involved",
+            "resourceCenter": "Resource Center",
+            "welcome": "Welcome"
+        },
+        "welcome": {
+            "research": "Research the Resource Center"
+        }
+    }
+}

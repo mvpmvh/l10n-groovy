@@ -1,0 +1,8 @@
+{
+    "error" : {
+            "messages": {
+                "impersonate": "Sorry, but you are not authorized to login as this user.",
+                "usernotfound": "You do not have a user account in Discovery Education. Please be sure to contact your school or district admin for more info."
+            }
+        }
+}
